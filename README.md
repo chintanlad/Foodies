@@ -1,56 +1,81 @@
+# **Foodie**  
+**Restaurant Management System**  
 
-# Foodie
+Foodie is a .NET Core MVC project designed to streamline restaurant management. It offers two user roles: **Admins** and **Customers**. Admins have full control over restaurants, meals, and customer management, while Customers can browse restaurants and place orders from available menus.
 
-Restaurant Management System
+---
 
-This is a .NET Core MVC project designed to manage restaurants and meals, with two types of users: Admins and Customers. Admins have full control over the system, managing restaurants, meals, and customers, while Customers can browse restaurants and order meals from them.
+## **Features**
 
-Features
+### **Admin Features**  
+- **Manage Restaurants:** Create, update, and delete restaurant details.  
+- **Manage Meals:** Add, edit, and remove meals from restaurant menus.  
+- **Manage Customers:** View and manage customer information.  
+- **Full CRUD Operations:** Complete Create, Read, Update, and Delete functionality for restaurants, meals, and customer data.  
 
+### **Customer Features**  
+- **Browse Restaurants:** View a list of restaurants added by admins.  
+- **Order Meals:** Explore menus of selected restaurants and place orders conveniently.  
 
-Admin Features
-Manage Restaurants: Admins can create, update, and delete restaurant details.
-Manage Meals: Admins can add, edit, and remove meals from restaurants.
-Manage Customers: Admins can view and manage customer information.
-Full CRUD Operations: Admins have full control over restaurants and meals, enabling Create, Read, Update, and Delete functionality.
+### **User Roles**  
+- **Admin:**  
+  - Oversees system operations, adding and maintaining restaurants, meals, and customer details.  
+- **Customer:**  
+  - Browses available restaurants and places orders directly from restaurant menus.  
 
+---
 
-Customer Features
-Browse Restaurants: Customers can view a list of restaurants added by admins.
-Order Meals: Customers can browse the menu of a selected restaurant and place orders.
+## **Key Functionalities**  
+- **Restaurant Management:** Add, update, or delete restaurant information to keep your database current.  
+- **Meal Reservations:** Allow customers to reserve meals at their favorite restaurants with ease.  
+- **Comprehensive CRUD Operations:** Empower admins with full control over all entities.  
 
+---
 
-User Roles
-Admin: Manages the entire system, including adding and maintaining restaurant data, meals, and customer details.
-Customer: Can browse restaurants and place orders from available menus.
+## **Getting Started**  
 
+Follow these steps to set up and run the Foodie project:  
 
-## Features
+1. **Clone the Repository:**  
+   ```bash
+   git clone <repository-link>
+   ```
+2. **Navigate to the Project Directory:**  
+   ```bash
+   cd foodie
+   ```
+3. **Open the Solution in Visual Studio:**  
+   - Launch Visual Studio and open the solution file.  
+4. **Build and Run the Application:**  
+   - Ensure all dependencies are restored, then build and run the project.  
+5. **Explore the Features:**  
+   - Start managing restaurants and meals seamlessly!  
 
-- **Restaurant Management**: Easily add, update, or delete restaurants to keep your database up-to-date.
-- **Meal Reservations**: Allow customers to reserve meals at their favorite restaurants hassle-free.
-- **Comprehensive CRUD Operations**: Enjoy full CRUD functionality for all your administrative tasks.
+---
 
-## Getting Started
+## **Technologies Used**  
+- **ASP.NET Core MVC**  
+- **C#**  
+- **Entity Framework Core**  
+- **HTML/CSS**  
+- **JavaScript**  
 
-To get started with Foodie, follow these simple steps:
+---
 
-1. Clone this repository to your local machine.
-2. Navigate to the project directory.
-3. Open the solution in Visual Studio.
-4. Build and run the application.
-5. Explore the features and start managing your restaurants effectively!
+## **Contributing**  
+Foodie is an open-source project, and contributions are welcome!  
 
-## Technologies Used
+If you have ideas for new features, bug fixes, or improvements, please open an issue or submit a pull request.
 
-Foodie is built using the following technologies:
+---
 
-- ASP.NET Core MVC
-- C#
-- Entity Framework Core
-- HTML/CSS
-- JavaScript
+## **Contributors**  
+- **Chintan Lad**  
+  [GitHub Profile](https://github.com/ChintanLad)  
+- **Udit Mehta**  
+  [GitHub Profile](https://github.com/UditMehta)  
 
-## Contributing
+---
 
-Foodie is a collaborative effort, and we welcome contributions! If you have any ideas for new features, bug fixes, or improvements, feel free to open an issue or submit a pull request.
+## **License**  
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).  
