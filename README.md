@@ -33,13 +33,8 @@ Foodie is built using the following technologies:
 
 Foodie is a collaborative effort, and we welcome contributions! If you have any ideas for new features, bug fixes, or improvements, feel free to open an issue or submit a pull request.
 
-### Contributors
-
-- [Rehab Adel](https://github.com/Rehab-Adel)
-- [Asmaa Elfatayry](https://github.com/asmaa-elfatayry)
-
 =======
-# QuickServe
+# Foodies
 Restaurant Management System
 
 This is a .NET Core MVC project designed to manage restaurants and meals, with two types of users: Admins and Customers. Admins have full control over the system, managing restaurants, meals, and customers, while Customers can browse restaurants and order meals from them.
