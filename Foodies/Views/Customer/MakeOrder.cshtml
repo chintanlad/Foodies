@@ -1,0 +1,107 @@
+﻿@model Foodies.Models.Meal
+
+@{
+    ViewData["Title"] = "Make Order";
+    Layout = "~/Views/Customer/_CustomerLayout.cshtml";
+}
+
+<h1 class="makeorder">Make Order</h1>
+
+<div class="container makeOrderPage">
+    <div class="row">
+        <div class="col-md-6 meal-container">
+            <img src="~/images/food.jpg" class="img-fluid mb-3" alt="Meal Image">
+
+            @if(Model != null)
+            {
+                
+
+                <h2>@Model?.MealName </h2>
+                <p>@Model?.Description</p>
+                <p>Price: @Model?.Price RS</p>
+                <p>Total Price: <span id="totalPrice">@Model?.Price </span>RS</p>
+            }
+            else
+            {
+                <p>Meal information is not available.</p>
+            }
+
+        </div>
+        <div class="col-md-6">
+            <h3>Order Details</h3>
+            @if (Model == null)
+            {
+                <p>Meal information is not available.</p>
+                return;
+            }
+            <form asp-action="ConfirmOrder" asp-controller="Customer" method="post" enctype="application/x-www-form-urlencoded">
+                <input type="hidden" name="Meal_Id" value="@Model?.Id ?? 0" />
+
+                <div class="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="Quantity" class="form-control" min="1" value="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="paymentType">Payment Type:</label>
+                    <select id="paymentType" name="PaymentType" class="form-control" required>
+                        <option value="cash">Cash</option>
+                        <option value="visa">Visa</option>
+                    </select>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" id="delivery" class="form-check-input" name="Delivery" value="true">
+                    <label for="delivery" class="form-check-label">Delivery</label>
+                </div>
+
+                <button type="submit" class="btn btn-success">Confirm Order</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        // Show/hide dining in number or Visa number based on delivery option or payment type
+        $('#delivery').change(function () {
+            if ($(this).is(':checked')) {
+                $('#diningInNumberGroup').show();
+            } else {
+                $('#diningInNumberGroup').hide();
+            }
+        });
+
+
+        $('#paymentType').change(function () {
+            if ($(this).val() === 'visa') {
+                $('#visaNumberGroup').show();
+            } else {
+                $('#visaNumberGroup').hide();
+            }
+        });
+
+        // Calculate total price based on quantity
+        $('#quantity').on('input', function () {
+            var quantity = $(this).val();
+            var price = @Model.Price;
+            var totalPrice = quantity * price;
+            $('#totalPrice').text(totalPrice);
+        });
+
+        function updateDeliveryValue() {
+            var deliveryCheckbox = document.getElementById("delivery");
+            var deliveryValueInput = document.getElementById("deliveryValue");
+
+            // Set value to "true" if checkbox is checked, otherwise set to "false"
+            deliveryValueInput.value = deliveryCheckbox.checked ? "true" : "false";
+        }
+
+        // Attach event listener to checkbox change event
+        document.getElementById("delivery").addEventListener("change", updateDeliveryValue);
+
+        // Call the function initially to set the initial value
+        updateDeliveryValue();
+    </script>
+}

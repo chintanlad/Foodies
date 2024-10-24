@@ -1,0 +1,42 @@
+﻿@model Restaurant
+@{
+    ViewData["Title"] = "Admin | Update Restaurant";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<form class="add-customer-form" asp-action="UpdateRestaurant" asp-controller="Admin" enctype="multipart/form-data">
+    <h1 class="title">Update Restaurant</h1>
+    
+    <div class="form-group">
+        <label for="Name">Update Restaurant Name:</label>
+        <input type="text" name="Name" value="@Model.Name" class="form-control" placeholder="Update Restaurant Name" required />
+        <span class="text-danger"></span>
+    </div>
+    
+    <div class="form-group">
+        <label for="Description">Update Restaurant Description:</label>
+        <input type="text" name="Description" value="@Model.Description" class="form-control" placeholder="Update Restaurant Description" required />
+        <span class="text-danger"></span>
+    </div>
+    
+    <div class="form-group">
+        <label for="Location">Update Restaurant Location:</label>
+        <input type="text" name="Location" value="@Model.Location" class="form-control" placeholder="Update Restaurant Location" required />
+        <span class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="ImgPath">Image Path:</label>
+        <input type="text" name="ImgPath" value="@Model.ImgPath" class="form-control" placeholder="Enter image path" />
+
+        <!-- Show the image if the ImgPath is provided -->
+        @if (!string.IsNullOrEmpty(Model.ImgPath))
+        {
+            <img src="@Model.ImgPath" alt="@Model.Name" style="width: 150px; height: auto;" />
+        }
+    </div>
+
+
+    <div asp-validation-summary="All" class="text-danger alert-danger"></div>
+    <button type="submit" class="btn btn-custom">Update</button>
+</form>

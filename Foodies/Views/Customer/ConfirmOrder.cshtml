@@ -1,0 +1,31 @@
+﻿@model Foodies.Models.Reservation
+
+@{
+    ViewData["Title"] = "Confirm Order";
+}
+
+<h2>Confirm Your Order</h2>
+
+<div>
+    <h3>Meal Details</h3>
+    <p><strong>Meal Name:</strong> @Model.Meal.MealName</p>
+    <p><strong>Price:</strong> @Model.Meal.Price</p>
+    <p><strong>Quantity:</strong> @Model.Quantity</p>
+    <p><strong>Total Cost:</strong> @((Model.Meal.Price * Model.Quantity).ToString("C"))</p>
+
+    <h3>Customer Information</h3>
+    <p><strong>Name:</strong> @Model.Customer.Username</p>
+    <p><strong>Address:</strong> @Model.Customer.Address</p>
+    <p><strong>Phone:</strong> @Model.Customer.Phone</p>
+
+    <h3>Payment</h3>
+    <p><strong>Payment Type:</strong> @Model.PaymentType</p>
+
+    <h3>Delivery</h3>
+    <p>@(Model.Delivery ? "Yes" : "No")</p>
+
+    <form method="post" asp-action="ConfirmOrder">
+        <button type="submit" class="btn btn-success">Confirm Order</button>
+        <a asp-action="CancelOrder" class="btn btn-danger">Cancel</a>
+    </form>
+</div>
